@@ -1,39 +1,24 @@
 import java.security.*;
 import java.io.*;
-/**
- * Created by tommy on 1/16/17.
- */
 public class ComputeSHA {
-    public static void main(String[] args) throws Exception {
-        try {
-            
-            //FileInputStream fis = new FileInputStream("/Users/tommy/IdeaProjects/ComputeSHA/out/production/ComputeSHA/sample-input.txt");
-            // Reading the file into the data byte-array, then update the data into the
-            // digest buffer.
-			File file = new File(args[0]);
-            byte[] data = new byte[(int)file.length()];
+	public static void main(String[] args) throws Exception {
+		MessageDigest md = MessageDigest.getInstance("SHA-1");
+		FileInputStream fis = new FileInputStream(args[0]);
+		byte[] dataBytes = new byte[1024];
+		int nread = 0;
+		while ((nread = fis.read(dataBytes)) != -1) {
+			md.update(dataBytes, 0, nread);
+		}
+		byte[] mdbytes = md.digest();
 
-			// Initialize the digest object and the fileinputstream;
-            MessageDigest md = MessageDigest.getInstance("SHA1");
-            FileInputStream fis = new FileInputStream(file);
-			
-            fis.read(data);
-			fis.close();
-			
-			md.update(data);
+		StringBuffer hexString = new StringBuffer();
+		for (int i = 0; i < mdbytes.length; i++) {
+			hexString.append(Integer.toHexString(0x0F & (mdbytes[i] >> 4)));
+			hexString.append(Integer.toHexString(0x0F & mdbytes[i]));
+		}
+		fis.close();
+		System.out.println(hexString.toString());
+		//System.out.println(Integer.toHexString(0));
+	}
 
-            // Call the digest hash function.
-            byte[] mdbytes = md.digest();
-
-            // Convert the byte to hex format.
-            StringBuffer hexString = new StringBuffer(mdbytes.length * 2);
-            for(byte b:mdbytes) {
-                hexString.append(String.format("%02x", b & 0xFF));
-            }
-            System.out.println(hexString.toString());
-        }
-        catch(Exception e) {
-            System.err.println("Error: " + e.getMessage());
-        }
-    }
 }
