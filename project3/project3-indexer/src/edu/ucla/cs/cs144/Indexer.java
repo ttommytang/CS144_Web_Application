@@ -23,6 +23,9 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
+//mport static com.sun.tools.classfile.AccessFlags.Kind.Field;
+//import static sun.rmi.transport.TransportConstants.Version;
+
 public class Indexer {
     
     /** Creates a new instance of Indexer */
@@ -81,19 +84,27 @@ public class Indexer {
 			String ItemQuery = "select ItemId, Name, Description from ItemInfo";
 			// acquire Category using Id attribute
 			String CategoryQuery = "select Category from CatgoryInfo where ItemId = ?";
-			Statement stmt = con.createStatement();
-			PreparedStatement ps = con.prepareStatement(CategoryQuery);
+			Statement stmt = conn.createStatement();
+			PreparedStatement ps = conn.prepareStatement(CategoryQuery);
 			ResultSet rs = stmt.executeQuery(ItemQuery);
 
 
 			getIndexWriter(true);
 			while (rs.next()) {
 				String itemId = rs.getString("ItemId");
-				String category = getCategory(ps, ItemId);
+				String category = getCategory(ps, "ItemId");
 				String name = rs.getString("Name");
 				String description = rs.getString("Description");
 				indexItem(itemId, category, name, description);
 			}
+
+
+			// close the database connection
+			conn.close();
+			rs.close();
+			stmt.close();
+			ps.close();
+
 		}
 		catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -103,12 +114,8 @@ public class Indexer {
 		}
 
 
-        // close the database connection
-		try {
-	    	conn.close();
-		} catch (SQLException ex) {
-	    	System.out.println(ex);
-		}
+
+
     }
 
     private void indexItem(String itemId, String category, String name, String description) throws IOException {
@@ -116,9 +123,9 @@ public class Indexer {
     	Document doc = new Document();
     	doc.add(new StringField("itemId", itemId, Field.Store.YES));
     	doc.add(new TextField("category", category, Field.Store.YES));
-		doc.add(new TextField("cname", name, Field.Store.YES));
+		doc.add(new TextField("name", name, Field.Store.YES));
 		doc.add(new TextField("description", description, Field.Store.YES));
-		doc.add(new TextField("category", category, Field.Store.YES));
+		//doc.add(new TextField("category", category, Field.Store.YES));
 		StringBuilder sb = new StringBuilder();
 		sb.append(itemId).append(" ").append(category).append(" ");
 		sb.append(name).append(" ").append(description);
@@ -128,12 +135,18 @@ public class Indexer {
 	}
 
 	//use ps and ItemId to retrieve the corresponding Categories for the certain Item
-    private String getCategory(PrepareStatement ps, String ItemId) {
-    	ps.setString(1, ItemId);
-    	ResultSet rs = ps.executeQuery();
-    	StringBuilder sb = new StringBuilder();
-    	while (rs.next()) {
-    		sb.append(rs.getString("Category")).append(" ");
+    private String getCategory(PreparedStatement ps, String ItemId) {
+		StringBuilder sb = new StringBuilder();
+    	try {
+			ps.setString(1, ItemId);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				sb.append(rs.getString("Category")).append(" ");
+			}
+
+		} catch (SQLException se) {
+    		se.printStackTrace();
 		}
 		return sb.toString();
 	}

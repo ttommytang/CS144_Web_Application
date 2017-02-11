@@ -55,7 +55,9 @@ public class AuctionSearch implements IAuctionSearch {
 		private QueryParser parser = null;
 
 		public SearchEngine() throws IOException {
+			System.out.println("im here");
 			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index"))));
+
 			parser = new QueryParser("content", new StandardAnalyzer());
 		}
 
@@ -74,26 +76,34 @@ public class AuctionSearch implements IAuctionSearch {
 	public SearchResult[] basicSearch(String query, int numResultsToSkip, 
 			int numResultsToReturn) {
 		// TODO: Your code here!
+
 		SearchResult[] result = new SearchResult[numResultsToReturn];
 		if (numResultsToReturn == 0) {
 			return result;
 		}
+
 		try {
-			SearchEngine se = nw SearchEngine();
+
+			SearchEngine se = new SearchEngine();
+
+
 			int totalNum = numResultsToReturn + numResultsToSkip;
 			TopDocs topDocs = se.performSearch(query, totalNum);
 			ScoreDoc[] hits = topDocs.scoreDocs;
+
 			int pos = 0;
 			for (int i = numResultsToSkip; i < totalNum; i++) {
-				Doctument doc = se.getDocument(hits[i].doc);
+				Document doc = se.getDocument(hits[i].doc);
+				System.out.println(doc.get("itemId") + " " + doc.get("name"));
 				result[pos++] = new SearchResult(doc.get("itemId"), doc.get("name"));
 			}
-			return result;
+
 
 
 		} catch (Exception e) {
 			System.out.println("Exception caught.\n");
 		}
+		return result;
 
 	}
 
