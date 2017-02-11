@@ -79,7 +79,7 @@ public class AuctionSearch implements IAuctionSearch {
 			return result;
 		}
 		try {
-			SearchEngine se = nw SearchEngine();
+			SearchEngine se = new SearchEngine();
 			int totalNum = numResultsToReturn + numResultsToSkip;
 			TopDocs topDocs = se.performSearch(query, totalNum);
 			ScoreDoc[] hits = topDocs.scoreDocs;
