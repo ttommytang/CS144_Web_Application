@@ -23,7 +23,7 @@ public class AuctionSearchTest {
 		for(SearchResult result : basicResults) {
 			System.out.println(result.getItemId() + ": " + result.getName());
 		}
-		
+		/*
 		SearchRegion region =
 		    new SearchRegion(33.774, -118.63, 34.201, -117.38); 
 		SearchResult[] spatialResults = as.spatialSearch("camera", region, 0, 20);
@@ -37,7 +37,7 @@ public class AuctionSearchTest {
 		String item = as.getXMLDataForItemId(itemId);
 		System.out.println("XML data for ItemId: " + itemId);
 		System.out.println(item);
-
+		*/
 		// Add your own test here
 	}
 }
