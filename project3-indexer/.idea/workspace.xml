@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2652cb34-9dd7-49b5-a460-b5545560e9de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3-searcher/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3-searcher/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" afterPath="$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-indexer/bin/edu/ucla/cs/cs144/DbManager.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-indexer/bin/edu/ucla/cs/cs144/Indexer.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch$SearchEngine.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearchTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/DbManager.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/IAuctionSearch.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/SearchRegion.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../project3/project3-searcher/bin/edu/ucla/cs/cs144/SearchResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" afterPath="$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3-searcher/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../project3-searcher/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" afterPath="$PROJECT_DIR$/../project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" afterPath="$PROJECT_DIR$/../project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3/project3-indexer/.idea/misc.xml" afterPath="$PROJECT_DIR$/../project3/project3-indexer/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3/project3-indexer/.idea/project3-indexer.iml" afterPath="$PROJECT_DIR$/../project3/project3-indexer/.idea/project3-indexer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3/project3-searcher/.idea/project3-searcher.iml" afterPath="$PROJECT_DIR$/../project3/project3-searcher/.idea/project3-searcher.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project3/project3-searcher/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../project3/project3-searcher/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +37,7 @@
       <file leaf-file-name="DbManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="315">
               <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -37,12 +49,12 @@
       <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            <state relative-caret-position="1050">
+              <caret line="141" column="70" lean-forward="false" selection-start-line="141" selection-start-column="70" selection-end-line="141" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1486847393000" expanded="true" signature="2821:2867" ph=" SELECT statement (ITEMINFO)" />
-                <marker date="1486847393000" expanded="true" signature="2939:2988" ph=" SELECT statement (CATGORYINFO)" />
+                <marker date="1486855907000" expanded="true" signature="2947:2993" ph=" SELECT statement (ITEMINFO)" />
+                <marker date="1486855907000" expanded="true" signature="6027:6101" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -61,8 +73,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
         <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
+        <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
       </list>
     </option>
   </component>
@@ -88,7 +100,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -121,8 +132,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,7 +420,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21681723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22515635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -437,6 +449,72 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1486855907000" expanded="true" signature="2947:2993" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1486855907000" expanded="true" signature="6027:6101" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1486855907000" expanded="true" signature="2947:2993" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1486855907000" expanded="true" signature="6027:6101" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1486855907000" expanded="true" signature="2947:2993" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1486855907000" expanded="true" signature="6027:6101" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
@@ -451,15 +529,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1486847393000" expanded="true" signature="2821:2867" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1486847393000" expanded="true" signature="2939:2988" ph=" SELECT statement (CATGORYINFO)" />
+            <marker date="1486855907000" expanded="true" signature="2947:2993" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1486855907000" expanded="true" signature="6027:6101" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="315">
           <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -469,12 +547,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        <state relative-caret-position="1050">
+          <caret line="141" column="70" lean-forward="false" selection-start-line="141" selection-start-column="70" selection-end-line="141" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1486847393000" expanded="true" signature="2821:2867" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1486847393000" expanded="true" signature="2939:2988" ph=" SELECT statement (CATGORYINFO)" />
+            <marker date="1486855907000" expanded="true" signature="2947:2993" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1486855907000" expanded="true" signature="6027:6101" ph="{...}" />
           </folding>
         </state>
       </provider>
