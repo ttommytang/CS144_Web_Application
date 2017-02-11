@@ -36,7 +36,7 @@ public class Indexer {
 
     public IndexWriter getIndexWriter(boolean create) throws IOException {
     	if (indexWriter == null) {
-    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index"));
+    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index/index1/"));
     		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StandardAnalyzer());
     		indexWriter = new IndexWriter(indexDir,config);
 		}
@@ -58,6 +58,7 @@ public class Indexer {
 	    conn = DbManager.getConnection(true);
 		} catch (SQLException ex) {
 	    	System.out.println(ex);
+
 		}
 
 
@@ -83,7 +84,7 @@ public class Indexer {
 		try {
 			String ItemQuery = "select ItemId, Name, Description from ItemInfo";
 			// acquire Category using Id attribute
-			String CategoryQuery = "select Category from CatgoryInfo where ItemId = ?";
+			String CategoryQuery = "select Category from CategoryInfo where ItemId = ?";
 			Statement stmt = conn.createStatement();
 			PreparedStatement ps = conn.prepareStatement(CategoryQuery);
 			ResultSet rs = stmt.executeQuery(ItemQuery);
@@ -104,6 +105,7 @@ public class Indexer {
 			rs.close();
 			stmt.close();
 			ps.close();
+			closeIndexWriter();
 
 		}
 		catch (IOException ioe) {
@@ -112,6 +114,7 @@ public class Indexer {
 		catch (SQLException sqle) {
 			sqle.printStackTrace();
 		}
+
 
 
 
