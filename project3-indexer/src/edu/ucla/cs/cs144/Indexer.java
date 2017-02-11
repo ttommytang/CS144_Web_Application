@@ -1,5 +1,7 @@
 package edu.ucla.cs.cs144;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.io.IOException;
 import java.io.StringReader;
@@ -33,8 +35,10 @@ public class Indexer {
 
     public IndexWriter getIndexWriter(boolean create) throws IOException {
     	if (indexWriter == null) {
-    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index"));
-    		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StandardAnalyzer());
+    		//Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index"));
+    		Directory indexDir = FSDirectory.open(Paths.get("/var/lib/lucene/index"));
+    		// IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StandardAnalyzer());
+    		IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
     		indexWriter = new IndexWriter(indexDir,config);
 		}
 		return indexWriter;
@@ -48,11 +52,11 @@ public class Indexer {
  
     public void rebuildIndexes() {
 
-        Connection conn = null;
+        Connection con = null;
 
         // create a connection to the database to retrieve Items from MySQL
 		try {
-	    conn = DbManager.getConnection(true);
+	    con = DbManager.getConnection(true);
 		} catch (SQLException ex) {
 	    	System.out.println(ex);
 		}
@@ -89,7 +93,7 @@ public class Indexer {
 			getIndexWriter(true);
 			while (rs.next()) {
 				String itemId = rs.getString("ItemId");
-				String category = getCategory(ps, ItemId);
+				String category = getCategory(ps, itemId);
 				String name = rs.getString("Name");
 				String description = rs.getString("Description");
 				indexItem(itemId, category, name, description);
@@ -105,7 +109,7 @@ public class Indexer {
 
         // close the database connection
 		try {
-	    	conn.close();
+	    	con.close();
 		} catch (SQLException ex) {
 	    	System.out.println(ex);
 		}
@@ -128,7 +132,7 @@ public class Indexer {
 	}
 
 	//use ps and ItemId to retrieve the corresponding Categories for the certain Item
-    private String getCategory(PrepareStatement ps, String ItemId) {
+    private String getCategory(PreparedStatement ps, String ItemId) throws SQLException {
     	ps.setString(1, ItemId);
     	ResultSet rs = ps.executeQuery();
     	StringBuilder sb = new StringBuilder();

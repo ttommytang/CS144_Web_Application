@@ -3,6 +3,7 @@ package edu.ucla.cs.cs144;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -55,7 +56,8 @@ public class AuctionSearch implements IAuctionSearch {
 		private QueryParser parser = null;
 
 		public SearchEngine() throws IOException {
-			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index"))));
+			// searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index"))));
+			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(Paths.get("/var/lib/lucene/index"))));
 			parser = new QueryParser("content", new StandardAnalyzer());
 		}
 
@@ -85,17 +87,16 @@ public class AuctionSearch implements IAuctionSearch {
 			ScoreDoc[] hits = topDocs.scoreDocs;
 			int pos = 0;
 			for (int i = numResultsToSkip; i < totalNum; i++) {
-				Doctument doc = se.getDocument(hits[i].doc);
+				Document doc = se.getDocument(hits[i].doc);
 				result[pos++] = new SearchResult(doc.get("itemId"), doc.get("name"));
 			}
-			return result;
-
 
 		} catch (Exception e) {
 			System.out.println("Exception caught.\n");
+			e.printStackTrace();
 		}
-
-	}
+		return result;
+    }
 
 	public SearchResult[] spatialSearch(String query, SearchRegion region,
 			int numResultsToSkip, int numResultsToReturn) {
