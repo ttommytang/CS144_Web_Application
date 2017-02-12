@@ -56,19 +56,17 @@ public class AuctionSearch implements IAuctionSearch {
 
 		public SearchEngine() throws IOException {
 			//System.out.println("im here");
-			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index1/"))));
+			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index5"))));
 
 			parser = new QueryParser("content", new StandardAnalyzer());
 		}
 
-		public TopDocs performSearch(String queryString, int n)
-				throws IOException, ParseException {
+		public TopDocs performSearch(String queryString, int n) throws IOException, ParseException {
 			Query query = parser.parse(queryString);
 			return searcher.search(query, n);
 		}
 
-		public Document getDocument(int docId)
-				throws IOException {
+		public Document getDocument(int docId) throws IOException {
 			return searcher.doc(docId);
 		}
 
@@ -77,9 +75,10 @@ public class AuctionSearch implements IAuctionSearch {
 			int numResultsToReturn) {
 		// TODO: Your code here!
 
-		SearchResult[] result = new SearchResult[numResultsToReturn];
+		//SearchResult[] result = new SearchResult[numResultsToReturn];
+		List<SearchResult> result = new ArrayList<>();
 		if (numResultsToReturn == 0) {
-			return result;
+			return result.toArray(new SearchResult[0]);
 		}
 
 		try {
@@ -91,13 +90,14 @@ public class AuctionSearch implements IAuctionSearch {
 			TopDocs topDocs = se.performSearch(query, totalNum);
 			ScoreDoc[] hits = topDocs.scoreDocs;
 
-			int pos = 0;
-			System.out.println(hits.length);
+			//int pos = 0;
+			//System.out.println("Matching result has " + hits.length + " of records");
 			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++) {
 				Document doc = se.getDocument(hits[i].doc);
 				//System.out.println(doc.get("itemId") + " " + doc.get("name"));
-				result[pos++] = new SearchResult(doc.get("itemId"), doc.get("name"));
+				result.add(new SearchResult(doc.get("itemId"), doc.get("name")));
 			}
+			//System.out.println("Size of result is " + result.size());
 
 
 
@@ -105,7 +105,7 @@ public class AuctionSearch implements IAuctionSearch {
 			System.out.println("Exception caught.\n");
 			e.printStackTrace();
 		}
-		return result;
+		return result.toArray(new SearchResult[0]);
 
 	}
 

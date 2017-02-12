@@ -34,9 +34,9 @@ public class Indexer {
 
     private IndexWriter indexWriter = null;
 
-    public IndexWriter getIndexWriter(boolean create) throws IOException {
+    public IndexWriter getIndexWriter() throws IOException {
     	if (indexWriter == null) {
-    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index/index1/"));
+    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index5"));
     		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StandardAnalyzer());
     		indexWriter = new IndexWriter(indexDir,config);
 		}
@@ -90,10 +90,15 @@ public class Indexer {
 			ResultSet rs = stmt.executeQuery(ItemQuery);
 
 
-			getIndexWriter(true);
+			//getIndexWriter();
 			while (rs.next()) {
+
 				String itemId = rs.getString("ItemId");
-				String category = getCategory(ps, "ItemId");
+				String category = getCategory(ps, itemId, CategoryQuery);
+				CharSequence cs = "kitchenware";
+				if (category.contains(cs)) {
+					System.out.println(itemId + " " + category);
+				}
 				String name = rs.getString("Name");
 				String description = rs.getString("Description");
 				indexItem(itemId, category, name, description);
@@ -122,7 +127,7 @@ public class Indexer {
     }
 
     private void indexItem(String itemId, String category, String name, String description) throws IOException {
-    	IndexWriter writer = getIndexWriter(false);
+    	IndexWriter writer = getIndexWriter();
     	Document doc = new Document();
     	doc.add(new StringField("itemId", itemId, Field.Store.YES));
     	doc.add(new TextField("category", category, Field.Store.YES));
@@ -138,7 +143,7 @@ public class Indexer {
 	}
 
 	//use ps and ItemId to retrieve the corresponding Categories for the certain Item
-    private String getCategory(PreparedStatement ps, String ItemId) {
+    private String getCategory(PreparedStatement ps, String ItemId, String query) {
 		StringBuilder sb = new StringBuilder();
     	try {
 			ps.setString(1, ItemId);
