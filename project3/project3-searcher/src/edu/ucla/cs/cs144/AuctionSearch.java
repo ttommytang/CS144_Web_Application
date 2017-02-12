@@ -93,13 +93,25 @@ public class AuctionSearch implements IAuctionSearch {
 
 			int pos = 0;
 			System.out.println(hits.length);
-			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++) {
-				Document doc = se.getDocument(hits[i].doc);
-				//System.out.println(doc.get("itemId") + " " + doc.get("name"));
-				result[pos++] = new SearchResult(doc.get("itemId"), doc.get("name"));
+			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++, pos++) {
+			    try {
+                    Document doc = se.getDocument(hits[i].doc);
+                    //System.out.println(doc.get("itemId") + " " + doc.get("name"));
+                    result[pos] = new SearchResult(doc.get("itemId"), doc.get("name"));
+                } catch (Exception e) {
+			        break;
+                }
 			}
 
-
+			// If the # of search result is smaller than the required number, trim the result to
+            // exclude the null entries.
+			if(pos < totalNum) {
+                SearchResult[] trimmedRes = new SearchResult[pos];
+                for(int i = 0; i < pos; i++) {
+                    trimmedRes[i] = result[i];
+                }
+                result = trimmedRes;
+            }
 
 		} catch (Exception e) {
 			System.out.println("Exception caught.\n");
