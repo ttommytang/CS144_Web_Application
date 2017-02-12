@@ -15,7 +15,7 @@ public class AuctionSearchTest {
 		String message = "Test message";
 		String reply = as.echo(message);
 		System.out.println("Reply: " + reply);
-		
+		/*
 		String query = "star trek";
 		SearchResult[] basicResults = as.basicSearch(query, 0, 1600);
 		//System.out.println("Length is " + basicResults.length);
@@ -32,7 +32,7 @@ public class AuctionSearchTest {
 		}
 
 		//System.out.println("Total number is : " + count);
-
+		*/
 		SearchRegion region =
 		    new SearchRegion(33.774, -118.63, 34.201, -117.38); 
 		SearchResult[] spatialResults = as.spatialSearch("camera", region, 0, 20);

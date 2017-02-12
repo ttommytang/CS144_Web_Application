@@ -115,14 +115,14 @@ public class AuctionSearch implements IAuctionSearch {
 
 		List<SearchResult> result = new ArrayList<>();
 		//convert search region into coordinates representation
-		double leftDownX = region.getLy();
-		double leftDownY = region.getLx();
-		double rightDownX = region.getRy();
-		double rightDownY = region.getLx();
-		double rightUpX = region.getRy();
-		double rightUpY = region.getRx();
-		double leftUpX = region.getLy();
-		double leftUpY = region.getRx();
+		double leftDownX = region.getLx();
+		double leftDownY = region.getLy();
+		double rightDownX = region.getLx();
+		double rightDownY = region.getRy();
+		double rightUpX = region.getRx();
+		double rightUpY = region.getRy();
+		double leftUpX = region.getRx();
+		double leftUpY = region.getLy();
 		StringBuilder sb = new StringBuilder();
 		sb.append(leftDownX + " " + leftDownY + ", ");
 		sb.append(rightDownX + " " + rightDownY + ", ");
@@ -132,7 +132,7 @@ public class AuctionSearch implements IAuctionSearch {
 
 		try {
 			Set<String> set = getItemWithinRegion(sb.toString());
-
+			System.out.println(set.size());
 			SearchEngine se = new SearchEngine();
 			int totalNum = numResultsToReturn + numResultsToSkip;
 			TopDocs topDocs = se.performSearch(query, totalNum);
@@ -158,7 +158,8 @@ public class AuctionSearch implements IAuctionSearch {
 	// filter the tuples and keep those which are within the region defined as s, return the set of Itemid of the tuples
 	private Set<String> getItemWithinRegion(String s) {
 		Set<String> result = new HashSet<>();
-		String query = "SELECT ItemId FROM LocationInfo WHERE MBRContains(GeomFromText ('Polygon((" + s + "))'), Location)";
+		String query = "SELECT ItemId \n FROM LocationInfo \n WHERE MBRContains(GeomFromText ('Polygon((" + s + "))'), Location)";
+		//System.out.println(query);
 		Connection conn = null;
 
 		// create a connection to the database to retrieve Items from MySQL
@@ -172,9 +173,12 @@ public class AuctionSearch implements IAuctionSearch {
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(query);
 			while (rs.next()) {
+
 				String id = rs.getString("ItemId");
 				result.add(id);
 			}
+			conn.close();
+			rs.close();
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
