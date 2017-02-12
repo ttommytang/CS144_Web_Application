@@ -3,10 +3,7 @@ package edu.ucla.cs.cs144;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.File;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.text.SimpleDateFormat;
 
 import java.sql.Connection;
@@ -112,7 +109,76 @@ public class AuctionSearch implements IAuctionSearch {
 	public SearchResult[] spatialSearch(String query, SearchRegion region,
 			int numResultsToSkip, int numResultsToReturn) {
 		// TODO: Your code here!
-		return new SearchResult[0];
+		if (numResultsToReturn == 0) {
+			return new SearchResult[0];
+		}
+
+		List<SearchResult> result = new ArrayList<>();
+		//convert search region into coordinates representation
+		double leftDownX = region.getLy();
+		double leftDownY = region.getLx();
+		double rightDownX = region.getRy();
+		double rightDownY = region.getLx();
+		double rightUpX = region.getRy();
+		double rightUpY = region.getRx();
+		double leftUpX = region.getLy();
+		double leftUpY = region.getRx();
+		StringBuilder sb = new StringBuilder();
+		sb.append(leftDownX + " " + leftDownY + ", ");
+		sb.append(rightDownX + " " + rightDownY + ", ");
+		sb.append(rightUpX + " " + rightUpY + ", ");
+		sb.append(leftUpX + " " + leftUpY + ", ");
+		sb.append(leftDownX + " " + leftDownY);
+
+		try {
+			Set<String> set = getItemWithinRegion(sb.toString());
+
+			SearchEngine se = new SearchEngine();
+			int totalNum = numResultsToReturn + numResultsToSkip;
+			TopDocs topDocs = se.performSearch(query, totalNum);
+			ScoreDoc[] hits = topDocs.scoreDocs;
+			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++) {
+				Document doc = se.getDocument(hits[i].doc);
+				//System.out.println(doc.get("itemId") + " " + doc.get("name"));
+				String id = doc.get("itemId");
+				String name = doc.get("name");
+				if (set.contains(id)) {
+					result.add(new SearchResult(id, name));
+				}
+			}
+
+		} catch (Exception e) {
+			System.out.println("Exception caught.\n");
+			e.printStackTrace();
+		}
+		return result.toArray(new SearchResult[0]);
+
+
+	}
+	// filter the tuples and keep those which are within the region defined as s, return the set of Itemid of the tuples
+	private Set<String> getItemWithinRegion(String s) {
+		Set<String> result = new HashSet<>();
+		String query = "SELECT ItemId FROM LocationInfo WHERE MBRContains(GeomFromText ('Polygon((" + s + "))'), Location)";
+		Connection conn = null;
+
+		// create a connection to the database to retrieve Items from MySQL
+		try {
+			conn = DbManager.getConnection(true);
+		} catch (SQLException ex) {
+			System.out.println(ex);
+
+		}
+		try {
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			while (rs.next()) {
+				String id = rs.getString("ItemId");
+				result.add(id);
+			}
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+		return result;
 	}
 
 	public String getXMLDataForItemId(String itemId) {
