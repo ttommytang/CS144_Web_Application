@@ -7,3 +7,5 @@ BidsInfo(<u>ItemId</u>, <u>UserId</u>, <u>time</u>, amount)
 UserInfo(<u>UserId</u>, Rating, Location, Country)
 
 SellerInfo(<u>SellerId</u>, Rating)
+
+All tables are in BCNF and 4NF

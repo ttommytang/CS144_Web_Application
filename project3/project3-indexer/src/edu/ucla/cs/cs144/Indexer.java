@@ -36,7 +36,7 @@ public class Indexer {
 
     public IndexWriter getIndexWriter(boolean create) throws IOException {
     	if (indexWriter == null) {
-    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index/index1/"));
+    		Directory indexDir = FSDirectory.open(new File("/var/lib/lucene/index/index0/"));
     		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StandardAnalyzer());
     		indexWriter = new IndexWriter(indexDir,config);
 		}
@@ -93,7 +93,7 @@ public class Indexer {
 			getIndexWriter(true);
 			while (rs.next()) {
 				String itemId = rs.getString("ItemId");
-				String category = getCategory(ps, "ItemId");
+				String category = getCategory(ps, itemId);
 				String name = rs.getString("Name");
 				String description = rs.getString("Description");
 				indexItem(itemId, category, name, description);

@@ -56,7 +56,7 @@ public class AuctionSearch implements IAuctionSearch {
 
 		public SearchEngine() throws IOException {
 			//System.out.println("im here");
-			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index1/"))));
+			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index0/"))));
 
 			parser = new QueryParser("content", new StandardAnalyzer());
 		}

@@ -16,7 +16,7 @@ public class AuctionSearchTest {
 		String reply = as.echo(message);
 		System.out.println("Reply: " + reply);
 		
-		String query = "star trek";
+		String query = "kitchenware";
 		SearchResult[] basicResults = as.basicSearch(query, 0, 1470);
 		System.out.println("Basic Seacrh Query: " + query);
 		System.out.println("Received " + basicResults.length + " results");
