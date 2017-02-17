@@ -12,7 +12,7 @@ create table if not exists ItemInfo (
 	Country varchar(30) not null,
 	Location varchar(60) not null,
 	Latitude varchar(20),
-	Longtitude varchar(20),
+	Longitude varchar(20),
 	SellerId varchar(30) not null,
 	Description varchar(4000) not null,
 

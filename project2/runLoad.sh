@@ -1,5 +1,5 @@
 #!/bin/bash
-mysql TEST< drop.sql
+mysql TEST < drop.sql
 
 mysql TEST < create.sql
 

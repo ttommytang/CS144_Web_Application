@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec68959a-ee7a-4c73-8e07-92dbec137e29" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project3-indexer/dropSQLIndex.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-indexer/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-indexer/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-indexer/.idea/project3-indexer.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-indexer/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-searcher/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-searcher/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project3-searcher/.idea/vcs.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/DbManager.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/DbManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project3.iml" afterPath="$PROJECT_DIR$/.idea/project3.iml" />
+    <list default="true" id="8c212752-0106-43ca-8531-f587a33099a6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project3-searcher/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-indexer/bin/edu/ucla/cs/cs144/Indexer.class" afterPath="$PROJECT_DIR$/project3-indexer/bin/edu/ucla/cs/cs144/Indexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch$SearchEngine.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch$SearchEngine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearchTest.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearchTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project2/create.sql" afterPath="$PROJECT_DIR$/../project2/create.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project2/runLoad.sh" afterPath="$PROJECT_DIR$/../project2/runLoad.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/.idea/workspace.xml" afterPath="$PROJECT_DIR$/project3-searcher/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/DbManager.java" afterPath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/DbManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql" afterPath="$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java" afterPath="$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" afterPath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" afterPath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,16 +27,47 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="project3-indexer" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+            <state relative-caret-position="583">
+              <caret line="141" column="28" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+                <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuctionSearch.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+              <folding>
+                <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+                <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+                <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+                <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+                <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+                <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuctionSearchTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -56,17 +85,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
+        <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
         <option value="$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java" />
+        <option value="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" />
+        <option value="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="417" />
+    <option name="x" value="451" />
     <option name="y" value="23" />
-    <option name="width" value="1120" />
+    <option name="width" value="1259" />
     <option name="height" value="972" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -84,7 +116,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -171,13 +202,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -332,7 +364,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="project3" />
+      <module name="project3-indexer" />
       <envs />
       <method />
     </configuration>
@@ -385,48 +417,50 @@
       <method />
     </configuration>
   </component>
-  <component name="SbtLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ec68959a-ee7a-4c73-8e07-92dbec137e29" name="Default" comment="" />
-      <created>1487111710503</created>
+      <changelist id="8c212752-0106-43ca-8531-f587a33099a6" name="Default" comment="" />
+      <created>1486356657432</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1487111710503</updated>
+      <updated>1486356657432</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="417" y="23" width="1120" height="972" extended-state="0" />
+    <frame x="451" y="23" width="1259" height="972" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12152502" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Running Result" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -450,20 +484,243 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="88" lean-forward="false" selection-start-line="38" selection-start-column="88" selection-end-line="38" selection-end-column="88" />
+          <folding>
+            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2130">
+          <caret line="170" column="35" lean-forward="true" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
+          <folding>
+            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/DbManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/IAuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="38" column="82" lean-forward="false" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+          <folding>
+            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/IAuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="82" lean-forward="false" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+          <folding>
+            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
+    <entry file="file://$PROJECT_DIR$/bin/edu/ucla/cs/cs144/Indexer.class" />
+    <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
+    <entry file="file://$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/DbManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/IAuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/DbManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="141" column="28" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+          <folding>
+            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
           </folding>
         </state>
       </provider>
@@ -520,11 +777,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>project3</last-edited>
+          <last-edited>project3-indexer</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

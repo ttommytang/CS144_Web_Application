@@ -57,7 +57,7 @@ public class Indexer {
 		try {
 	    conn = DbManager.getConnection(true);
 		} catch (SQLException ex) {
-	    	System.out.println(ex);
+	    	ex.printStackTrace();
 
 		}
 
@@ -90,10 +90,15 @@ public class Indexer {
 			ResultSet rs = stmt.executeQuery(ItemQuery);
 
 
-			getIndexWriter(true);
+			//getIndexWriter();
 			while (rs.next()) {
+
 				String itemId = rs.getString("ItemId");
-				String category = getCategory(ps, itemId);
+				String category = getCategory(ps, itemId, CategoryQuery);
+				CharSequence cs = "kitchenware";
+				if (category.contains(cs)) {
+					System.out.println(itemId + " " + category);
+				}
 				String name = rs.getString("Name");
 				String description = rs.getString("Description");
 				indexItem(itemId, category, name, description);
@@ -108,37 +113,29 @@ public class Indexer {
 			closeIndexWriter();
 
 		}
-		catch (IOException ioe) {
+		catch (IOException | SQLException ioe) {
 			ioe.printStackTrace();
 		}
-		catch (SQLException sqle) {
-			sqle.printStackTrace();
-		}
 
 
-
-
-
-    }
+	}
 
     private void indexItem(String itemId, String category, String name, String description) throws IOException {
-    	IndexWriter writer = getIndexWriter(false);
+    	IndexWriter writer = getIndexWriter();
     	Document doc = new Document();
     	doc.add(new StringField("itemId", itemId, Field.Store.YES));
     	doc.add(new TextField("category", category, Field.Store.YES));
 		doc.add(new TextField("name", name, Field.Store.YES));
 		doc.add(new TextField("description", description, Field.Store.YES));
 		//doc.add(new TextField("category", category, Field.Store.YES));
-		StringBuilder sb = new StringBuilder();
-		sb.append(itemId).append(" ").append(category).append(" ");
-		sb.append(name).append(" ").append(description);
-		String fullText = sb.toString();
+		String fullText = itemId + " " + category + " " +
+				name + " " + description;
 		doc.add(new TextField("content", fullText, Field.Store.NO));
 		writer.addDocument(doc);
 	}
 
 	//use ps and ItemId to retrieve the corresponding Categories for the certain Item
-    private String getCategory(PreparedStatement ps, String ItemId) {
+    private String getCategory(PreparedStatement ps, String ItemId, String query) {
 		StringBuilder sb = new StringBuilder();
     	try {
 			ps.setString(1, ItemId);

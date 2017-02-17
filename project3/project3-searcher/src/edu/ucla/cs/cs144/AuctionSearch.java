@@ -3,16 +3,9 @@ package edu.ucla.cs.cs144;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.File;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
+import java.util.*;
 import java.text.SimpleDateFormat;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.analysis.Analyzer;
@@ -56,19 +49,17 @@ public class AuctionSearch implements IAuctionSearch {
 
 		public SearchEngine() throws IOException {
 			//System.out.println("im here");
-			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index0/"))));
+			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index2"))));
 
 			parser = new QueryParser("content", new StandardAnalyzer());
 		}
 
-		public TopDocs performSearch(String queryString, int n)
-				throws IOException, ParseException {
+		public TopDocs performSearch(String queryString, int n) throws IOException, ParseException {
 			Query query = parser.parse(queryString);
 			return searcher.search(query, n);
 		}
 
-		public Document getDocument(int docId)
-				throws IOException {
+		public Document getDocument(int docId) throws IOException {
 			return searcher.doc(docId);
 		}
 
@@ -77,9 +68,10 @@ public class AuctionSearch implements IAuctionSearch {
 			int numResultsToReturn) {
 		// TODO: Your code here!
 
-		SearchResult[] result = new SearchResult[numResultsToReturn];
+		//SearchResult[] result = new SearchResult[numResultsToReturn];
+		List<SearchResult> result = new ArrayList<>();
 		if (numResultsToReturn == 0) {
-			return result;
+			return result.toArray(new SearchResult[0]);
 		}
 
 		try {
@@ -91,46 +83,264 @@ public class AuctionSearch implements IAuctionSearch {
 			TopDocs topDocs = se.performSearch(query, totalNum);
 			ScoreDoc[] hits = topDocs.scoreDocs;
 
-			int pos = 0;
-			System.out.println(hits.length);
-			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++, pos++) {
+			//System.out.println("Matching result has " + hits.length + " of records");
+			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++) {
 			    try {
                     Document doc = se.getDocument(hits[i].doc);
                     //System.out.println(doc.get("itemId") + " " + doc.get("name"));
-                    result[pos] = new SearchResult(doc.get("itemId"), doc.get("name"));
+                    result.add(new SearchResult(doc.get("itemId"), doc.get("name")));
                 } catch (Exception e) {
 			        break;
                 }
 			}
-
-			// If the # of search result is smaller than the required number, trim the result to
-            // exclude the null entries.
-			if(pos < totalNum) {
-                SearchResult[] trimmedRes = new SearchResult[pos];
-                for(int i = 0; i < pos; i++) {
-                    trimmedRes[i] = result[i];
-                }
-                result = trimmedRes;
-            }
+			//System.out.println("Size of result is " + result.size());
 
 		} catch (Exception e) {
 			System.out.println("Exception caught.\n");
 			e.printStackTrace();
 		}
-		return result;
+		return result.toArray(new SearchResult[0]);
 
 	}
 
 	public SearchResult[] spatialSearch(String query, SearchRegion region,
 			int numResultsToSkip, int numResultsToReturn) {
 		// TODO: Your code here!
-		return new SearchResult[0];
+		if (numResultsToReturn == 0) {
+			return new SearchResult[0];
+		}
+
+		List<SearchResult> result = new ArrayList<>();
+
+		//convert search region into coordinates representation
+		double leftDownX = region.getLx();
+		double leftDownY = region.getLy();
+		double rightDownX = region.getLx();
+		double rightDownY = region.getRy();
+		double rightUpX = region.getRx();
+		double rightUpY = region.getRy();
+		double leftUpX = region.getRx();
+		double leftUpY = region.getLy();
+		StringBuilder sb = new StringBuilder();
+		sb.append(leftDownX + " " + leftDownY + ", ");
+		sb.append(rightDownX + " " + rightDownY + ", ");
+		sb.append(rightUpX + " " + rightUpY + ", ");
+		sb.append(leftUpX + " " + leftUpY + ", ");
+		sb.append(leftDownX + " " + leftDownY);
+
+		try {
+			Set<String> set = getItemWithinRegion(sb.toString());
+			System.out.println(set.size());
+			SearchEngine se = new SearchEngine();
+			int totalNum = numResultsToReturn + numResultsToSkip;
+			TopDocs topDocs = se.performSearch(query, totalNum);
+			ScoreDoc[] hits = topDocs.scoreDocs;
+			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++) {
+				Document doc = se.getDocument(hits[i].doc);
+				//System.out.println(doc.get("itemId") + " " + doc.get("name"));
+				String id = doc.get("itemId");
+				String name = doc.get("name");
+				if (set.contains(id)) {
+					result.add(new SearchResult(id, name));
+				}
+			}
+
+		} catch (Exception e) {
+			System.out.println("Exception caught.\n");
+			e.printStackTrace();
+		}
+		return result.toArray(new SearchResult[0]);
+
+
+	}
+	// filter the tuples and keep those which are within the region defined as s, return the set of Itemid of the tuples
+	private Set<String> getItemWithinRegion(String s) {
+		Set<String> result = new HashSet<>();
+		String query = "SELECT ItemId \n FROM LocationInfo \n WHERE MBRContains(GeomFromText ('Polygon((" + s + "))'), Location)";
+		//System.out.println(query);
+		Connection conn = null;
+
+		// create a connection to the database to retrieve Items from MySQL
+		try {
+			conn = DbManager.getConnection(true);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		try {
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			while (rs.next()) {
+
+				String id = rs.getString("ItemId");
+				result.add(id);
+			}
+			conn.close();
+			rs.close();
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+		return result;
 	}
 
-	public String getXMLDataForItemId(String itemId) {
-		// TODO: Your code here!
+    /**
+     * This helper function take in the date String in the format of yyyy-MM-dd HH:mm:ss
+     * and produce a new date string in the format of MMM-dd-yy HH:mm:ss.
+     * @param input date string retrived from the table.
+     * @return return the date string in the format of MMM-dd-yy HH:mm:ss.
+     */
+	private static String dateFormat(String input) {
+		try {
+			SimpleDateFormat outDateFormat = new SimpleDateFormat("MMM-dd-yy HH:mm:ss");
+			SimpleDateFormat inDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			java.util.Date parsedInDate = inDateFormat.parse(input);
+            //System.out.println(formatedDate);
+			return "" + outDateFormat.format(parsedInDate);
+		} catch (java.text.ParseException e) {
+			e.printStackTrace();
+		}
 		return "";
 	}
+
+	public String getXMLDataForItemId(String itemId){
+		// TODO: Your code here!
+		Connection conn = null;
+
+		// create a connection to the database to retrieve Items from MySQL
+		try {
+			conn = DbManager.getConnection(true);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+
+		}
+		String xmlout = "<Item";
+
+		try{
+			String ItemQuery = "SELECT * FROM ItemInfo WHERE ItemId = " + itemId;
+			String categoryQuery = "SELECT Category FROM CategoryInfo WHERE ItemId = " + itemId;
+			String bidsQuery = "SELECT * FROM BidsInfo WHERE ItemId = " + itemId;
+			String userQuery = "SELECT * FROM UserInfo WHERE UserId = ?";
+			String sellerQuery = "SELECT Rating from SellerInfo WHERE SellerId = ?";
+
+			String[] fields = new String[]{"Name", "Category", "Currently", "Buy_Price", "First_Bid", "Number_of_Bids", "Bids",
+			"Location", "Country", "Started", "Ends", "Seller", "Description"};
+
+			PreparedStatement ps_item = conn.prepareStatement(ItemQuery);
+			PreparedStatement ps_bids = conn.prepareStatement(bidsQuery);
+			PreparedStatement ps_cate = conn.prepareStatement(categoryQuery);
+			PreparedStatement ps_user = conn.prepareStatement(userQuery);
+			PreparedStatement ps_seller = conn.prepareStatement(sellerQuery);
+
+			//
+			ResultSet rs = ps_item.executeQuery();
+			// If there is no match item with the input ItemId, just return an empty xml tag.
+			if(!rs.next()) {
+				return xmlout + " />";
+				// return "<Item />";
+			}
+
+			xmlout = xmlout + " ItemID=\"" + itemId + "\">\n";
+
+			for(String attr : fields) {
+                switch (attr) {
+                    case "Name":
+                    case "Number_of_Bids":
+                    case "Country":
+                    case "Description":
+                        xmlout += "  <" + attr + ">" + rs.getString(attr) + "</" + attr + ">\n";
+                        break;
+                    case "Currently":
+                    case "First_Bid":
+                        xmlout += "  <" + attr + ">$" + rs.getString(attr) + "</" + attr + ">\n";
+                        break;
+                    case "Buy_Price":
+                        if (!rs.getString(attr).equals("0.00")) {
+                            xmlout += "  <" + attr + ">$" + rs.getString(attr) + "</" + attr + ">\n";
+                        }
+                        break;
+                    case "Category":
+                        ResultSet rs_cate = ps_cate.executeQuery();
+                        while (rs_cate.next()) {
+                            xmlout += "  <Category>" + rs_cate.getString(attr) + "</Category>\n";
+                        }
+                        break;
+                    case "Location":
+                        xmlout += "  <Location";
+                        if ((!rs.getString("Latitude").equals("")) && (!rs.getString("Longitude").equals(""))) {
+                            xmlout += " Latitude=\"" + rs.getString("Latitude") + "\" Longitude=\"" +
+                                    rs.getString("Longitude") + "\">";
+                        }
+                        xmlout += rs.getString("Location") + "</Location>\n";
+                        break;
+                    case "Started":
+                    case "Ends":
+                        xmlout += "  <" + attr + ">" + dateFormat(rs.getString(attr)) + "</" + attr + ">\n";
+                        break;
+                    case "Seller":
+                        String SellerId = rs.getString("SellerId");
+                        ps_seller.setString(1, SellerId);
+                        ResultSet rs_seller = ps_seller.executeQuery();
+                        if(rs_seller.next()) {
+                            xmlout += "  <Seller Rating=\"" + rs_seller.getString("Rating") + "\" UserID=\"" +
+                                    SellerId + "\" />\n";
+                        }
+                        break;
+                    case "Bids":
+                        xmlout = writeBids(xmlout, ps_bids, ps_user);
+                        break;
+                }
+			}
+			xmlout += "</Item>";
+
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+		return xmlout;
+	}
+
+    /** This helper function writes to xml-representative string the bids information retrieved using the two
+     * passed in query handler for BidsInfo and UserInfo tables.
+     * @param xmlStr current xml-representative string.
+     * @param ps_bids query handler for BidsInfo table.
+     * @param ps_user query handler for UserInfo table.
+     */
+	private String writeBids(String xmlStr, PreparedStatement ps_bids, PreparedStatement ps_user) {
+	    xmlStr += "  <Bids";
+	    try {
+            ResultSet bids = ps_bids.executeQuery();
+
+            // No bids information, just write empty and return.
+            if(!bids.next()) {
+                xmlStr += " />\n";
+                return xmlStr;
+            }
+            bids.beforeFirst();
+
+            // Traver all the bids in the ResultSet, write information into the string.
+            xmlStr += ">\n";
+            while(bids.next()) {
+                xmlStr += "    <Bid>\n";
+                String bidderId = bids.getString("UserId");
+                ps_user.setString(1, bidderId);
+                ResultSet rs_user = ps_user.executeQuery();
+                if(rs_user.next()) {
+                    xmlStr += "      <Bidder Rating=\"" + rs_user.getString("Rating") + "\" UserID=\"" +
+                            bidderId + "\">\n";
+                    xmlStr += "        <Location>" + rs_user.getString("Location") + "</Location>\n";
+                    xmlStr += "        <Country>" + rs_user.getString("Country") + "</Country>\n";
+                    xmlStr += "      </Bidder>\n";
+                }
+                xmlStr += "      <Time>" + dateFormat(bids.getString("Time")) + "</Time>\n";
+                xmlStr += "      <Amount>$" + bids.getString("Amount") + "</Amount>\n";
+                xmlStr += "    </Bid>\n";
+            }
+            xmlStr += "  </Bids>\n";
+
+        } catch (SQLException se) {
+	        se.printStackTrace();
+        }
+        return xmlStr;
+
+    }
 	
 	public String echo(String message) {
 		return message;

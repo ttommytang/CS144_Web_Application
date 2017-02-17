@@ -8,11 +8,18 @@ CREATE TABLE LocationInfo
 
 INSERT INTO LocationInfo(ItemId, Location)
 SELECT ItemId, PointFromText(CONCAT('POINT(',ItemInfo.Latitude,' ',ItemInfo.Longitude,')'))
-FROM ItemInfo;
+FROM ItemInfo
+WHERE Latitude != "" AND Longitude != "";
 
 ALTER table LocationInfo ADD SPATIAL INDEX(Location);
 
+SET @poly = 'POLYGON((33.774 -118.63, 
+					  33.774 -117.38,
+				      34.201 -117.38,
+				      34.201 -118.63,
+				      33.774 -118.63))';
+
 SELECT count(ItemId)
 FROM LocationInfo
-WHERE MBRCONTAINS( GEOMFROMTEXT(  'POLYGON((33.774 -118.63),(33.774 -117.38),(34.201 -117.38),(34.201 -118.63),(33.774 -118.63)))' ) , Location);
+WHERE MBRCONTAINS(GEOMFROMTEXT(@poly), Location);
 
