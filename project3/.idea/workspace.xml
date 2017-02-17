@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c212752-0106-43ca-8531-f587a33099a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project3-searcher/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-indexer/bin/edu/ucla/cs/cs144/Indexer.class" afterPath="$PROJECT_DIR$/project3-indexer/bin/edu/ucla/cs/cs144/Indexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch$SearchEngine.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch$SearchEngine.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearch.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearchTest.class" afterPath="$PROJECT_DIR$/project3-searcher/bin/edu/ucla/cs/cs144/AuctionSearchTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project2/create.sql" afterPath="$PROJECT_DIR$/../project2/create.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../project2/runLoad.sh" afterPath="$PROJECT_DIR$/../project2/runLoad.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql" afterPath="$PROJECT_DIR$/project3-indexer/buildSQLIndex.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java" afterPath="$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" afterPath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" afterPath="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" />
@@ -35,11 +28,12 @@
       <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="141" column="28" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+            <state relative-caret-position="1800">
+              <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
               <folding>
-                <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
-                <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+                <element signature="imports" expanded="false" />
+                <marker date="1487306472000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+                <marker date="1487306472000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
               </folding>
             </state>
           </provider>
@@ -48,15 +42,16 @@
       <file leaf-file-name="AuctionSearch.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="480">
+              <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
               <folding>
-                <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
-                <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
-                <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
-                <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
-                <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
-                <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+                <element signature="imports" expanded="true" />
+                <marker date="1487307522000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+                <marker date="1487307522000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+                <marker date="1487307522000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+                <marker date="1487307522000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+                <marker date="1487307522000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+                <marker date="1487307522000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
               </folding>
             </state>
           </provider>
@@ -65,8 +60,8 @@
       <file leaf-file-name="AuctionSearchTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+            <state relative-caret-position="641">
+              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -88,13 +83,13 @@
         <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/DbManager.java" />
         <option value="$PROJECT_DIR$/src/edu/ucla/cs/cs144/Indexer.java" />
         <option value="$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java" />
-        <option value="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" />
         <option value="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java" />
+        <option value="$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="451" />
+    <option name="x" value="344" />
     <option name="y" value="23" />
     <option name="width" value="1259" />
     <option name="height" value="972" />
@@ -114,8 +109,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,6 +195,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -431,7 +426,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="451" y="23" width="1259" height="972" extended-state="0" />
+    <frame x="344" y="23" width="1259" height="972" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -484,11 +479,48 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="141" column="28" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1487306472000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487306472000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1487307522000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="38" column="88" lean-forward="false" selection-start-line="38" selection-start-column="88" selection-end-line="38" selection-end-column="88" />
           <folding>
-            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+            <element signature="imports" expanded="false" />
+            <marker date="1487306472000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487306472000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
           </folding>
         </state>
       </provider>
@@ -498,12 +530,13 @@
         <state relative-caret-position="2130">
           <caret line="170" column="35" lean-forward="true" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
           <folding>
-            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+            <element signature="imports" expanded="true" />
+            <marker date="1487307522000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
           </folding>
         </state>
       </provider>
@@ -530,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -555,8 +587,9 @@
         <state relative-caret-position="255">
           <caret line="38" column="82" lean-forward="false" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
           <folding>
-            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+            <element signature="imports" expanded="false" />
+            <marker date="1487306472000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487306472000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
           </folding>
         </state>
       </provider>
@@ -566,12 +599,13 @@
         <state relative-caret-position="900">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+            <element signature="imports" expanded="true" />
+            <marker date="1487307522000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
           </folding>
         </state>
       </provider>
@@ -588,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -613,8 +646,9 @@
         <state relative-caret-position="570">
           <caret line="38" column="82" lean-forward="false" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
           <folding>
-            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+            <element signature="imports" expanded="false" />
+            <marker date="1487306472000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487306472000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
           </folding>
         </state>
       </provider>
@@ -624,12 +658,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+            <element signature="imports" expanded="true" />
+            <marker date="1487307522000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
           </folding>
         </state>
       </provider>
@@ -653,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,36 +725,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
+    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="1800">
+          <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1487306472000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487306472000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project3-indexer/src/edu/ucla/cs/cs144/Indexer.java">
+    <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="141" column="28" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
-          <folding>
-            <marker date="1487301964000" expanded="true" signature="2720:2766" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487301964000" expanded="true" signature="2838:2888" ph=" SELECT statement (CATEGORYINFO)" />
-          </folding>
+        <state relative-caret-position="641">
+          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project3-searcher/src/edu/ucla/cs/cs144/AuctionSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state relative-caret-position="480">
+          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
           <folding>
-            <marker date="1487305575000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
-            <marker date="1487305575000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
+            <element signature="imports" expanded="true" />
+            <marker date="1487307522000" expanded="true" signature="5457:5561" ph=" SELECT statement (LOCATIONINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7209:7247" ph=" SELECT statement (ITEMINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7286:7335" ph=" SELECT statement (CATEGORYINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7370:7408" ph=" SELECT statement (BIDSINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7443:7482" ph=" SELECT statement (USERINFO)" />
+            <marker date="1487307522000" expanded="true" signature="7510:7558" ph=" SELECT statement (SELLERINFO)" />
           </folding>
         </state>
       </provider>

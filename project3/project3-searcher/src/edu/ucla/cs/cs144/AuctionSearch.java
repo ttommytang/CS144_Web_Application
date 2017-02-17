@@ -265,7 +265,7 @@ public class AuctionSearch implements IAuctionSearch {
                         break;
                     case "Location":
                         xmlout += "  <Location";
-                        if ((!rs.getString("Latitude").equals("")) && (!rs.getString("Longitude").equals(""))) {
+                        if ((!rs.getString("Latitude").equals("0.000000")) && (!rs.getString("Longitude").equals("0.000000"))) {
                             xmlout += " Latitude=\"" + rs.getString("Latitude") + "\" Longitude=\"" +
                                     rs.getString("Longitude") + "\">";
                         }
