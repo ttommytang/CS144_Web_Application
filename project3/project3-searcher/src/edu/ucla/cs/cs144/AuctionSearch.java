@@ -246,7 +246,11 @@ public class AuctionSearch implements IAuctionSearch {
                     case "Number_of_Bids":
                     case "Country":
                     case "Description":
-                        xmlout += "  <" + attr + ">" + rs.getString(attr) + "</" + attr + ">\n";
+                    	if(rs.getString(attr).equals("")) {
+                    	    xmlout += "  <" + attr + " />\n";
+                        } else {
+                            xmlout += "  <" + attr + ">" + rs.getString(attr) + "</" + attr + ">\n";
+                        }
                         break;
                     case "Currently":
                     case "First_Bid":
@@ -267,9 +271,9 @@ public class AuctionSearch implements IAuctionSearch {
                         xmlout += "  <Location";
                         if ((!rs.getString("Latitude").equals("0.000000")) && (!rs.getString("Longitude").equals("0.000000"))) {
                             xmlout += " Latitude=\"" + rs.getString("Latitude") + "\" Longitude=\"" +
-                                    rs.getString("Longitude") + "\">";
+                                    rs.getString("Longitude") + "\"";
                         }
-                        xmlout += rs.getString("Location") + "</Location>\n";
+                        xmlout += ">" + rs.getString("Location") + "</Location>\n";
                         break;
                     case "Started":
                     case "Ends":

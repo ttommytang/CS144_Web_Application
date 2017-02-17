@@ -198,7 +198,7 @@ class MyParser {
         sb.append(columnSeparator);
 
         //Buy_Price
-        String buyPrice = "";
+        String buyPrice = null;
         Element isBought = getElementByTagNameNR(item, "Buy_Price");
         if (isBought != null) {
             buyPrice = strip(MyParser.getElementText(isBought));
