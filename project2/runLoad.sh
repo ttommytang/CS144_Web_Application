@@ -1,7 +1,7 @@
 #!/bin/bash
-mysql TEST < drop.sql
+mysql CS144 < drop.sql
 
-mysql TEST < create.sql
+mysql CS144 < create.sql
 
 ant
 ant run-all
@@ -12,7 +12,7 @@ sort -u BidsInfo.dat -o BidsInfo.dat
 sort -u UserInfo.dat -o UserInfo.dat
 sort -u SellerInfo.dat -o SellerInfo.dat
 
-mysql TEST < load.sql
+mysql CS144 < load.sql
 
 rm *.dat
 
