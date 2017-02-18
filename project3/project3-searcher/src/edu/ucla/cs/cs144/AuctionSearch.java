@@ -49,7 +49,7 @@ public class AuctionSearch implements IAuctionSearch {
 
 		public SearchEngine() throws IOException {
 			//System.out.println("im here");
-			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index2"))));
+			searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(new File("/var/lib/lucene/index/index3"))));
 
 			parser = new QueryParser("content", new StandardAnalyzer());
 		}
@@ -133,15 +133,24 @@ public class AuctionSearch implements IAuctionSearch {
 			System.out.println(set.size());
 			SearchEngine se = new SearchEngine();
 			int totalNum = numResultsToReturn + numResultsToSkip;
-			TopDocs topDocs = se.performSearch(query, totalNum);
+
+			// Return all the searching results based on keyword search.
+			TopDocs topDocs = se.performSearch(query, Integer.MAX_VALUE);
 			ScoreDoc[] hits = topDocs.scoreDocs;
-			for (int i = numResultsToSkip; i < totalNum && i < hits.length; i++) {
-				Document doc = se.getDocument(hits[i].doc);
-				//System.out.println(doc.get("itemId") + " " + doc.get("name"));
-				String id = doc.get("itemId");
-				String name = doc.get("name");
-				if (set.contains(id)) {
-					result.add(new SearchResult(id, name));
+			int count = 0;
+
+			for (int i = numResultsToSkip; i < hits.length && count < totalNum; i++) {
+				try {
+					Document doc = se.getDocument(hits[i].doc);
+					//System.out.println(doc.get("itemId") + " " + doc.get("name"));
+					String id = doc.get("itemId");
+					String name = doc.get("name");
+					if (set.contains(id)) {
+						count++;
+						result.add(new SearchResult(id, name));
+					}
+				} catch (Exception e) {
+					break;
 				}
 			}
 
@@ -269,7 +278,7 @@ public class AuctionSearch implements IAuctionSearch {
                         break;
                     case "Location":
                         xmlout += "  <Location";
-                        if ((!rs.getString("Latitude").equals("0.000000")) && (!rs.getString("Longitude").equals("0.000000"))) {
+                        if ((!rs.getString("Latitude").equals("")) && (!rs.getString("Longitude").equals(""))) {
                             xmlout += " Latitude=\"" + rs.getString("Latitude") + "\" Longitude=\"" +
                                     rs.getString("Longitude") + "\"";
                         }

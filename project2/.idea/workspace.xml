@@ -18,7 +18,7 @@
       <file leaf-file-name="MyParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/MyParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="3420">
               <caret line="251" column="33" lean-forward="true" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -342,7 +342,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="242" y="23" width="1259" height="972" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -394,7 +394,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/edu/ucla/cs/cs144/MyParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="3420">
           <caret line="251" column="33" lean-forward="true" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
