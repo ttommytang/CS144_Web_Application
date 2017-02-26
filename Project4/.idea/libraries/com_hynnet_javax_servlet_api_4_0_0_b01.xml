@@ -2,7 +2,7 @@
   <library name="com.hynnet:javax.servlet-api:4.0.0-b01" type="repository">
     <properties maven-id="com.hynnet:javax.servlet-api:4.0.0-b01" />
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/hynnet/javax.servlet-api/4.0.0-b01/javax.servlet-api-4.0.0-b01.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet-api-4.0.0-b01.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
