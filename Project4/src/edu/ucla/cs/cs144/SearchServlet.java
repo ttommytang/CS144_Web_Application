@@ -18,11 +18,15 @@ public class SearchServlet extends HttpServlet implements Servlet {
         AuctionSearch as = new AuctionSearch();
         int numResultsToReturn = 20;
         String query = request.getParameter("query");
-        int numResultsToSkip = Integer.parseInt(request.getParameter("numResultsToSkip"));
-        SearchResult[] results = as.basicSearch(query, numResultsToSkip, numResultsToReturn);
 
-        PrintWriter out = response.getWriter();
+        int numResultsToSkip = Integer.parseInt(request.getParameter("numResultsToSkip"));
+
+
+
+        SearchResult[] results = as.basicSearch(query, numResultsToSkip, numResultsToReturn);
         /*
+        PrintWriter out = response.getWriter();
+
         out.println("<html>");
         out.println("<head><title>Servlet Example</title></head>");
         out.println("<body>" + numResultsToSkip + "</body>");
