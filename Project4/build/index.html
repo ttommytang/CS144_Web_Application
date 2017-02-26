@@ -1,11 +1,48 @@
 <html>
-    <head><title>eBay Search</title></head>
-    <body><h1>eBay Search Web Site</h1></body>
-    <div>
-        <form action="/eBay/search" method="GET">
-            Search for : <input type = "text" name="query"><br>
-            <input type="hidden" name="numResultsToSkip" value="0">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <head>
+        <title>eBay Search</title>
+        <script type="text/javascript" src="SuggestionController.js"></script>
+        <script type="text/javascript" src="SuggestionProvider.js"></script>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                var autoSuggest = new AutoSuggestControl(document.getElementById("q"), new SuggestionProvider());
+            }
+        </script>
+        <style type="text/css">
+            div.suggestions {
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                border: 1px solid black;
+                position: absolute;
+                background-color: white;
+            }
+            div.suggestions div {
+                cursor: default;
+                padding: 0px 3px;
+            }
+            div.suggestions div.current {
+                background-color: #3366cc;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+
+            <h1>eBay Search Web Site</h1>
+
+            <form action="/eBay/search" method="GET" autocomplete="off" target="_blank">
+                <input type = "text"  style="width: 300px;" id="q" name="query"><br>
+                <input type="hidden" name="numResultsToSkip" value="0">
+                <input type="submit" value="Submit">
+            </form>
+
+
+             <!-- <b>Length</b> : <pre id="length"></pre> -->
+            <!-- <b>Suggestions</b> : <pre id="suggestion"></pre> -->
+
+    </body>
+
 </html>
+
+
