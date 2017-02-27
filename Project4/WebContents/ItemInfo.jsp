@@ -53,19 +53,42 @@
 		
 		.right-col {
 		  width: calc(80% - 3em);
+		  text-align: justify;
 		  bottom: 1em;
 		  overflow: scroll;
 		  border-left: 3px solid #74afe0;
-		  padding-left: 0.5em;
+		  padding-right: 0.5em;
 		}
 		
 		.content {
 		  font-size: 25px;
 		}
+		
+		#floatbutton {
+			padding: 0px;
+			border-radius: 10px;
+			height: 40px;
+			width: 100px;
+			color: white;
+			left: 2%;
+			top: 5px;
+			background-color: #c1ddf4;
+			position: fixed;
+			cursor: pointer;
+			font-size: 18;
+		}
+		
+		#map_canvas {
+			height: 400px;
+			width: 720px;
+		}
 	</style>
 </head>
 <body>
 	<header>Item Information</header>
+	<div id="floatbutton" onclick="history.back()">
+		<p>Back to List</p>
+	</div>
 	<div class="container">
 		<div class="left-col">
 			<div class="content">
@@ -190,13 +213,38 @@
 			</div>
 		</div>
 		<% String loc = (String)request.getAttribute("Location");
-		if(request.getAttribute("Latitude") != null && request.getAttribute("Longitude") != null) {
+		double lat = 0.0;
+		double lng = 0.0;
+		if(request.getAttribute("Latitude") != null && !request.getAttribute("Latitude").equals("") && request.getAttribute("Longitude") != null && !request.getAttribute("Longitude").equals("")) {
 			loc = loc + "(" + request.getAttribute("Latitude") + ", " + request.getAttribute("Longitude") + ")"; 
+			lat = Double.parseDouble((String)request.getAttribute("Latitude"));
+			lng = Double.parseDouble((String)request.getAttribute("Longitude"));
 		}%>
 		<div class="right-col">
 			<div class="content">
 				<p><%= request.getAttribute("Location") %></p>
 			</div>
+			<% if(lat != 0.0 && lng != 0.0) { %>
+			<div id="map_canvas"></div>
+				<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+				<script type="text/javascript"> 
+	  				function initialize() { 
+		    			var latlng = new google.maps.LatLng(<%= lat%>,<%= lng%>); 
+		    			var myOptions = { 
+		      				zoom: 14, // default is 8  
+		      				center: latlng, 
+		      				mapTypeId: google.maps.MapTypeId.ROADMAP 
+		    			}; 
+		    			var map = new google.maps.Map(document.getElementById("map_canvas"), 
+		        			myOptions); 
+						var marker = new google.maps.Marker({
+							position: latlng,
+							map: map
+						});
+	  				}
+					initialize("map_canvas");
+				</script> 
+			<% } %>
 		</div>
 		<div class="left-col">
 			<div class="content">
