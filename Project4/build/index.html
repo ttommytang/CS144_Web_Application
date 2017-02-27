@@ -1,11 +1,59 @@
 <html>
-    <head><title>eBay Search</title></head>
-    <body><h1>eBay Search Web Site</h1></body>
-    <div>
-        <form action="/eBay/search" method="GET" target="_blank">
-            Search for : <input type = "text" name="query"><br>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <title>eBay Search</title>
+        <script type="text/javascript" src="SuggestionController.js"></script>
+        <script type="text/javascript" src="SuggestionProvider.js"></script>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                var autoSuggest = new AutoSuggestControl(document.getElementById("q"), new SuggestionProvider());
+            }
+        </script>
+        <style type="text/css">
+            div.suggestions {
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                border: 1px solid black;
+                position: absolute;
+                background-color: white;
+            }
+            div.suggestions div {
+                cursor: default;
+                padding: 0px 3px;
+            }
+            div.suggestions div.current {
+                background-color: #3366cc;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <h1 style="text-align: center">Start Your Search Below : </h1>
+        <form  class="form" action="/eBay/search" method="GET" autocomplete="off" target="_blank">
+            <input type = "text" class="form-control"   id="q" name="query">
             <input type="hidden" name="numResultsToSkip" value="0">
-            <input type="submit" value="Submit">
+            <input type="submit" class="btn btn-primary" value="Submit">
         </form>
+        <div class="jumbotron">
+            <h1>eBay Auction Search Interface</h1>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3 style="text-align: right">CopyRight@Jiapeng, Tommy</h3>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
+    </body>
+
 </html>
+
+

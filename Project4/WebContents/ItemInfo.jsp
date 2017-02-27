@@ -27,6 +27,7 @@
 		  left: 0px;
 		  height: 1em;
 		  text-align: right;
+          font-size:6pt;
 		}
 		
 		.container {
@@ -75,19 +76,21 @@
 			background-color: #c1ddf4;
 			position: fixed;
 			cursor: pointer;
-			font-size: 18;
+			font-size: 16pt;
+            text-align: center;
 		}
 		
 		#map_canvas {
 			height: 400px;
 			width: 720px;
+
 		}
 	</style>
 </head>
 <body>
 	<header>Item Information</header>
 	<div id="floatbutton" onclick="history.back()">
-		<p>Back to List</p>
+		<p>Back</p>
 	</div>
 	<div class="container">
 		<div class="left-col">
@@ -239,7 +242,8 @@
 		        			myOptions); 
 						var marker = new google.maps.Marker({
 							position: latlng,
-							map: map
+							map: map,
+                            animation: google.maps.Animation.BOUNCE
 						});
 	  				}
 					initialize("map_canvas");
@@ -298,6 +302,6 @@
 			</div>
 		</div>
 	</div>
-	<footer>&copy; Copyright and Made by Jiapeng & Tommy</footer>
+    <footer>&copy; Copyright and Made by Jiapeng & Tommy</footer>
 </body>
 </html>

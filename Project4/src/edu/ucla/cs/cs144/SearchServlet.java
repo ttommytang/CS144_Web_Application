@@ -33,7 +33,7 @@ public class SearchServlet extends HttpServlet implements Servlet {
         out.println("</html>");
         out.close();
         */
-        System.out.println(results.length);
+       // System.out.println(results.length);
         request.setAttribute("results", results);
 
         request.getRequestDispatcher("/SearchResult.jsp").forward(request, response);
