@@ -99,8 +99,8 @@
             </table>
 
             <div id="flip">
-                <a id="prev" class="btn btn-default" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=skipNum >= 20 ? skipNum - 20: skipNum%>">Prev</a>
-                <a id="next" class="btn btn-default" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=results.length == 20 ? skipNum + 20: skipNum%>">Next</a>
+                <a id="prev" class="btn btn-default"  style="visibility: <%= skipNum >= 20 ? "visible": "hidden"%>" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=skipNum >= 20 ? skipNum - 20: skipNum%>">Prev</a>
+                <a id="next" class="btn btn-default" style="visibility: <%= results.length == 20  ? "visible": "hidden"%>" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=results.length == 20 ? skipNum + 20: skipNum%>">Next</a>
             </div>
         </div>
 
