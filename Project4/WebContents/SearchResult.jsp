@@ -59,39 +59,51 @@
     <title>Search Result</title>
 
     <body>
-        <div class="container">
-    <div id="searchBox">
-        <form class="form" action="/eBay/search" method="GET" >
-            <h1>Search for : </h1>
-            <input class="form-control" type = "text" autocomplete="off" id="q" name="query"><br>
-            <input type="hidden" name="numResultsToSkip" value="0">
-            <input type="submit" class="btn btn-primary" value="Submit">
-        </form>
-    </div>
-    <div id="result">
-        <h2>Search Result for <%= "\"" + request.getParameter("query") + "\""%></h2>
-        <% SearchResult[] results = (SearchResult[])request.getAttribute("results");%>
-        <table class = "table">
-            <tr>
-                <th>Item ID</th><th>Item Name</th>
-            </tr>
-        <% for (int i = 0; i < results.length; i++) { %>
-            <tr>
-                <td><a href="/eBay/item?id=<%= results[i].getItemId() %>"><%= results[i].getItemId() %>
-                <td><%= results[i].getName() %>
-            </tr>
-        <% } %>
-        <%
-            String query = request.getParameter("query");
-            int numResultsToSkip = Integer.parseInt(request.getParameter("numResultsToSkip"));
-        %>
-        </table>
-    </div>
-        <div id="flip">
-            <a id="prev" class="btn btn-default" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=numResultsToSkip >= 20 ? numResultsToSkip - 20: numResultsToSkip%>">Prev</a>
-            <a id="next" class="btn btn-default" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=results.length == 20 ? numResultsToSkip + 20: numResultsToSkip%>">Next</a>
-        </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 style="text-align: center">eBay Auction Search Interface</h1>
 
         </div>
+        <div id="searchBox">
+            <form class="form" action="/eBay/search" method="GET" >
+                <h1>Search for : </h1>
+                <input class="form-control" type = "text" autocomplete="off" id="q" name="query"><br>
+                <input type="hidden" name="numResultsToSkip" value="0">
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+        </div>
+        <div id="result" style="visibility:  <%= request.getParameter("query") == null ? "hidden" : "visible"%>">
+            <h2>Search Result for <%= "\"" + ((request.getParameter("query") == null) ? "" : request.getParameter("query")) + "\""%></h2>
+            <% SearchResult[] results = (SearchResult[])request.getAttribute("results");%>
+            <table class = "table">
+                <tr>
+                    <th>Item ID</th><th>Item Name</th>
+                </tr>
+            <% for (int i = 0; i < results.length; i++) { %>
+                <tr>
+                    <td><a href="/eBay/item?id=<%= results[i].getItemId() %>"><%= results[i].getItemId() %>
+                    <td><%= results[i].getName() %>
+                </tr>
+            <% } %>
+            <%
+                String query;
+                int skipNum;
+                try {
+                    query = request.getParameter("query");
+                    skipNum = Integer.parseInt(request.getParameter("numResultsToSkip"));
+                } catch (Exception e) {
+                    query = "";
+                    skipNum = 0;
+                }
+            %>
+            </table>
+
+            <div id="flip">
+                <a id="prev" class="btn btn-default" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=skipNum >= 20 ? skipNum - 20: skipNum%>">Prev</a>
+                <a id="next" class="btn btn-default" href="/eBay/search?query=<%=query%>&amp;numResultsToSkip=<%=results.length == 20 ? skipNum + 20: skipNum%>">Next</a>
+            </div>
+        </div>
+
+    </div>
     </body>
 </html>

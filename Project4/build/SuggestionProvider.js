@@ -20,7 +20,7 @@ SuggestionProvider.prototype.requestSuggestions = function (oAutoSuggestControl,
 
         //var htmlCode = "<ul>";
         var aSuggestions = new Array();
-    	if (xhttp.readyState == 4) {
+    	if (xhttp.readyState == 4 && xhttp.status == 200) {
             var response = xhttp.responseXML;
 
     		var s = response.getElementsByTagName("CompleteSuggestion");
