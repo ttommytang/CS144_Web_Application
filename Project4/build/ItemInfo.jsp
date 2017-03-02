@@ -5,9 +5,14 @@
 
 <html>
 <head>
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<style>
 		header {
-		  background-color: #74afe0;
+		  background-color: #919191;
 		  font-size: 26pt;
 		  text-align: center;
 		  height: 50px;
@@ -17,17 +22,18 @@
 		  width: 100%;
 		  top: 0;
 		  line-height: 50px;
+		  z-index: 998;
 		}
 		
 		footer {
-		  background-color: #74afe0;
+		  background-color: #919191;
 		  position: fixed;
 		  bottom: 0px;
 		  width: 100%;
 		  left: 0px;
-		  height: 1em;
+		  height: 2em;
 		  text-align: right;
-          font-size:6pt;
+          font-size:8pt;
 		}
 		
 		.container {
@@ -44,28 +50,29 @@
 		}
 		
 		.left-col {
-		  width: calc(20% - 2em);
+		  width: 18%;
 		  text-align: right;
 		  color: #74afe0;
+		  font-style: italic;
 		  overflow: auto;
 		  float: left;
 		  clear: left;
 		}
 		
 		.right-col {
-		  width: calc(80% - 3em);
+		  width: 78%;
 		  text-align: justify;
-		  bottom: 1em;
+		  bottom: 2em;
+		  right: 0px;
 		  overflow: scroll;
-		  border-left: 3px solid #74afe0;
-		  padding-right: 0.5em;
+		  border-left: 3px solid #919191;
 		}
 		
 		.content {
 		  font-size: 25px;
 		}
 		
-		#floatbutton {
+		.floatbutton {
 			padding: 0px;
 			border-radius: 10px;
 			height: 40px;
@@ -73,11 +80,12 @@
 			color: white;
 			left: 2%;
 			top: 5px;
-			background-color: #c1ddf4;
+			background-color: #707070;
 			position: fixed;
 			cursor: pointer;
-			font-size: 16pt;
+			font-size: 23pt;
             text-align: center;
+            z-index: 999;
 		}
 		
 		#map_canvas {
@@ -89,7 +97,7 @@
 </head>
 <body>
 	<header>Item Information</header>
-	<div id="floatbutton" onclick="history.back()">
+	<div class="floatbutton" onclick="history.back()">
 		<p>Back</p>
 	</div>
 	<div class="container">
@@ -181,7 +189,7 @@
 				</div>
 			</div>
 			<div class="right-col">
-				<table>
+				<table style="width: 60%">
 					<colgroup>
 						<col style="background-color:#d0e3f4">
 						<col style="background-color:#afd5f7">
@@ -226,29 +234,29 @@
 		<div class="right-col">
 			<div class="content">
 				<p><%= request.getAttribute("Location") %></p>
+				<% if(lat != 0.0 && lng != 0.0) { %>
+				<div id="map_canvas"></div>
+					<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+					<script type="text/javascript"> 
+		  				function initialize() { 
+			    			var latlng = new google.maps.LatLng(<%= lat%>,<%= lng%>); 
+			    			var myOptions = { 
+			      				zoom: 14, // default is 8  
+			      				center: latlng, 
+			      				mapTypeId: google.maps.MapTypeId.ROADMAP 
+			    			}; 
+			    			var map = new google.maps.Map(document.getElementById("map_canvas"), 
+			        			myOptions); 
+							var marker = new google.maps.Marker({
+								position: latlng,
+								map: map,
+	                            animation: google.maps.Animation.BOUNCE
+							});
+		  				}
+						initialize("map_canvas");
+					</script> 
+				<% } %>
 			</div>
-			<% if(lat != 0.0 && lng != 0.0) { %>
-			<div id="map_canvas"></div>
-				<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
-				<script type="text/javascript"> 
-	  				function initialize() { 
-		    			var latlng = new google.maps.LatLng(<%= lat%>,<%= lng%>); 
-		    			var myOptions = { 
-		      				zoom: 14, // default is 8  
-		      				center: latlng, 
-		      				mapTypeId: google.maps.MapTypeId.ROADMAP 
-		    			}; 
-		    			var map = new google.maps.Map(document.getElementById("map_canvas"), 
-		        			myOptions); 
-						var marker = new google.maps.Marker({
-							position: latlng,
-							map: map,
-                            animation: google.maps.Animation.BOUNCE
-						});
-	  				}
-					initialize("map_canvas");
-				</script> 
-			<% } %>
 		</div>
 		<div class="left-col">
 			<div class="content">
