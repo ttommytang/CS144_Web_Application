@@ -38,7 +38,7 @@
 		
 		.container {
 		  margin-top: 80px;
-		  margin-bottom: 1.5em;
+		  margin-bottom: 2em;
 		  left: 0;
 		  bottom: 0;
 		}

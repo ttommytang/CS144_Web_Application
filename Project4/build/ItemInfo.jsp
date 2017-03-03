@@ -189,7 +189,7 @@
 				</div>
 			</div>
 			<div class="right-col">
-				<table style="width: 60%">
+				<table style="width: 80%">
 					<colgroup>
 						<col style="background-color:#d0e3f4">
 						<col style="background-color:#afd5f7">
