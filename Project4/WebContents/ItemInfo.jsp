@@ -31,16 +31,22 @@
 		  bottom: 0px;
 		  width: 100%;
 		  left: 0px;
-		  height: 2em;
+		  height: 1.5em;
 		  text-align: right;
           font-size:8pt;
 		}
 		
 		.container {
-		  margin-top: 80px;
-		  margin-bottom: 1.5em;
-		  left: 0;
-		  bottom: 0;
+
+			margin-top: 80px;
+
+		  	left: 0;
+
+			margin-bottom: 1.5em;
+
+
+
+
 		}
 		
 		.container p,
@@ -57,6 +63,7 @@
 		  overflow: auto;
 		  float: left;
 		  clear: left;
+		  margin-right: 1em;
 		}
 		
 		.right-col {
@@ -66,6 +73,7 @@
 		  right: 0px;
 		  overflow: scroll;
 		  border-left: 3px solid #919191;
+		  margin-left: 1em;
 		}
 		
 		.content {
@@ -97,7 +105,7 @@
 </head>
 <body>
 	<header>Item Information</header>
-	<div class="floatbutton" onclick="history.back()">
+	<div class="floatbutton btn btn-primary" onclick="history.back()">
 		<p>Back</p>
 	</div>
 	<div class="container">
@@ -189,7 +197,7 @@
 				</div>
 			</div>
 			<div class="right-col">
-				<table style="width: 80%">
+				<table class="table" style="width: 80%">
 					<colgroup>
 						<col style="background-color:#d0e3f4">
 						<col style="background-color:#afd5f7">
