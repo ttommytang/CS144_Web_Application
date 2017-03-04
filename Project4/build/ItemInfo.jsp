@@ -191,11 +191,7 @@
 				</div>
 			</div>
 			<div class="right-col">
-<<<<<<< HEAD
-				<table style="width: 80%">
-=======
 				<table class="table" style="width: 80%">
->>>>>>> origin/master
 					<colgroup>
 						<col style="background-color:#d0e3f4">
 						<col style="background-color:#afd5f7">

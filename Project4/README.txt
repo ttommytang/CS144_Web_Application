@@ -1,0 +1,1 @@
+This is the source code and web page scripts for our eBay auction search and navigation web application, which basically can be built into a eBay auction data keyword search and information representing. Simply build and deploy the web application using ant command in the terminal. And visit the web application using the URL: http://localhost:1448/eBay/search. 
