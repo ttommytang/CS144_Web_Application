@@ -1,0 +1,12 @@
+val lines = sc.textFile("twitter.edges")
+val split = lines.map( line => line.split(": "))
+val followRdd = split.flatMap( arr => {
+  val follower = arr(0)
+  val users = arr(1)
+  val user = users.split(",")
+  user.map(word => (word, 1))
+})
+val countRdd = followRdd.reduceByKey((a,b) => a+b)
+val filteredCount = countRdd.filter(x => x._2 > 1000)
+filteredCount.saveAsTextFile("output")
+System.exit(0)
